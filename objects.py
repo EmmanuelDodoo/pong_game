@@ -3,7 +3,7 @@
 import win32gui
 import re
 # To solve an error which appeared
-import win32com.client  # FUll solution in WindowMgr.set_foreground
+import win32com.client  # Full solution in WindowMgr.set_foreground
 
 
 class Rectangle:
@@ -160,6 +160,6 @@ class WindowMgr:
 
     def set_foreground(self):
         """put the window in the foreground"""
-        shell = win32com.client.Dispatch("WScript.Shell")
+        shell = win32com.client.Dispatch("WScript.Shell") #This and the line underneath are the solution mentioned earlier
         shell.SendKeys('%')
         win32gui.SetForegroundWindow(self._handle)
